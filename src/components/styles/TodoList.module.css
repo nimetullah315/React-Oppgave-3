@@ -1,13 +1,17 @@
-ul{
+
+
+.todoList {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
-li {
+
+.todoItem {
     list-style: none;
     background-color: gray;
-    height:30px;
+    height: 30px;
     min-width: 250px;
     width: 100%;
     
@@ -16,27 +20,27 @@ li {
     align-items: center;
     align-content: center;
     border: 2px solid yellow;
-    padding:5px 10px;
+    padding: 5px 10px;
     font-weight: 600;
-    margin:10px;
+    margin: 10px;
     border-radius: 10px;
-    
 }
 
-
-li > p {
+.todoItem > p {
     display: inline-block;
     flex: 1;
     text-align: center;
+    margin: 0;
 }
 
-li > button {
+.todoItem > button {
     font-weight: 600;
+    cursor: pointer;
 }
 
-li > button:hover {
+.todoItem > button:hover {
     font-weight: 600;
     background-color: red;
     border: 2px solid red;
-    color:white;
+    color: white;
 }

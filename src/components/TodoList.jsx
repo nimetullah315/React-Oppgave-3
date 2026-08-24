@@ -8,9 +8,10 @@ const TodoList = () => {
     const [isChecked,setIsChecked] = useState(false);
   
     return (
-   <ul>
+   <ul className={styles.todoList}>
       {todos.map((todo) => (
         <li
+        className={styles.todoItem}
           key={todo.id}
           style={{textDecoration: todo.done ? "line-through 3px" : "none" }}
         >

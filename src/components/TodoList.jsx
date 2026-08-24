@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
 import { TodoContext } from "../App";
+import styles from "./styles/TodoList.module.css";
+
 
 const TodoList = () => {
     const { todos, toggleTodo, removeTodo } = useContext(TodoContext);
@@ -10,11 +12,10 @@ const TodoList = () => {
       {todos.map((todo) => (
         <li
           key={todo.id}
-          style={{ textDecoration: todo.done ? "line-through" : "none" }}
+          style={{textDecoration: todo.done ? "line-through 3px" : "none" }}
         >
         <input type="checkbox" onChange={() => toggleTodo(todo.id)}  />
-            {todo.text}
-          
+            <p>{todo.text}</p>
           <button onClick={() => removeTodo(todo.id)}>X</button>
         </li>
       ))}

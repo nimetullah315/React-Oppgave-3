@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext,useEffect } from "react";
 import "./App.css";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
@@ -13,6 +13,11 @@ export const ThemeContext =  createContext();
 const App = () => {
   const [theme,setTheme] = useState("light");
   const [todos,setTodos] = useState([]);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = theme === "light" ? "white" : "black";
+    document.body.style.color = theme === "light" ? "black" : "white"; 
+  }, [theme]);
 
   const toggleTheme= ()=>{
 setTheme((prev)=> (prev === "light"?"dark":"light"));
@@ -44,7 +49,7 @@ setTheme((prev)=> (prev === "light"?"dark":"light"));
   
   return (
     <TodoContext.Provider value={{ todos, addTodo, toggleTodo, removeTodo }}>
-      <div>
+      <div className="container">
       <ThemeContext.Provider value={{theme,toggleTheme}}>
 <ThemeSwitcher  />
       </ThemeContext.Provider>

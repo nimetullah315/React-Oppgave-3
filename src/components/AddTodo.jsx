@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { TodoContext } from "../App";
+import styles from "./styles/AddTodo.module.css";
 
 const AddTodo = () => {
     const [text,setText] = useState("");
@@ -11,8 +12,8 @@ const AddTodo = () => {
     setText(""); // Reset input field after adding
   };
   return (
-    <div>
-        <h1>Todo</h1>
+    <div className={styles.todo}>
+        
       <input
         type="text"
         value={text}
